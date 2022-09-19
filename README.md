@@ -1,2 +1,3 @@
-# quadtree in C
-Simple, barebone quadtree implementation.
+# quadtree
+Simple, barebone quadtree implementation in C.
+Instructions and ideas are presented in the header and comments of the files.
