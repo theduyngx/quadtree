@@ -1,0 +1,10 @@
+# ninja log v5
+2	146	6853915036556638	CMakeFiles/qtree_self_implementation.dir/qtree.c.obj	dfa5c1b536b8f420
+552	983	6853965368690270	qtree_self_implementation.exe	5d28c5f7c5199e07
+5	550	6853965364440205	CMakeFiles/qtree_self_implementation.dir/main.c.obj	5b53a86f6b687737
+6	225	6853912399405942	CMakeFiles/qtree_self_implementation.dir/queue.c.obj	9cc7268a39330728
+12	552	6853965364470268	CMakeFiles/qtree_self_implementation.dir/read.c.obj	afa1483671c1487
+0	151	6854757513786675	CMakeFiles/quadtree-in-c.dir/main.c.obj	648d75955adca6f
+5	170	6854757513984116	CMakeFiles/quadtree-in-c.dir/read.c.obj	9cd297bf30c844db
+10	171	6854757513964088	CMakeFiles/quadtree-in-c.dir/qtree.c.obj	2e06c96c83f36cbb
+171	311	6854757515349283	quadtree-in-c.exe	368d5e0eac360588
