@@ -1,5 +1,5 @@
 /*
- * Header of read file, which specifically reads manual inputs; the header
+ * Header of manual read, which specifically reads manual inputs; the header
  * only includes a globally accessible function to read from user input as
  * intended, along with constants that are useful for the program.
  */

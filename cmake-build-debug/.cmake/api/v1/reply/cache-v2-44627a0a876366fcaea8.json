@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/thedu/OneDrive/Desktop/UniMelb/Studies/Other Subjects/COMP20003 - Algorithms and Data Structures/quadtree-in-c/cmake-build-debug"
+			"value" : "c:/Users/thedu/OneDrive/Desktop/UniMelb/Studies/Other Subjects/COMP20003 - Algorithms and Data Structures/quadtree/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -479,7 +479,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/thedu/OneDrive/Desktop/UniMelb/Studies/Other Subjects/COMP20003 - Algorithms and Data Structures/quadtree-in-c"
+			"value" : "C:/Users/thedu/OneDrive/Desktop/UniMelb/Studies/Other Subjects/COMP20003 - Algorithms and Data Structures/quadtree"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1095,7 +1095,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/thedu/OneDrive/Desktop/UniMelb/Studies/Other Subjects/COMP20003 - Algorithms and Data Structures/quadtree-in-c/cmake-build-debug"
+			"value" : "C:/Users/thedu/OneDrive/Desktop/UniMelb/Studies/Other Subjects/COMP20003 - Algorithms and Data Structures/quadtree/cmake-build-debug"
 		},
 		{
 			"name" : "qtree_self_implementation_IS_TOP_LEVEL",
@@ -1119,7 +1119,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/thedu/OneDrive/Desktop/UniMelb/Studies/Other Subjects/COMP20003 - Algorithms and Data Structures/quadtree-in-c"
+			"value" : "C:/Users/thedu/OneDrive/Desktop/UniMelb/Studies/Other Subjects/COMP20003 - Algorithms and Data Structures/quadtree"
 		}
 	],
 	"kind" : "cache",

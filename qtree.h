@@ -10,7 +10,7 @@
 enum quadrant {sw,nw,ne,se};
 
 // quadtree structure
-typedef struct node node_t;
+typedef struct node qtnode_t;
 
 // point, including x,y coordinates
 typedef struct point {
@@ -28,10 +28,10 @@ typedef struct square {
 struct node {
     point_t* point;
     square_t* square;
-    node_t* nw;
-    node_t* ne;
-    node_t* sw;
-    node_t* se;
+    qtnode_t* nw;
+    qtnode_t* ne;
+    qtnode_t* sw;
+    qtnode_t* se;
 };
 
 /** function prototypes */
@@ -43,16 +43,16 @@ point_t* init_point(long double x, long double y);
 square_t* init_square(point_t* p1, point_t* p2);
 
 /* initialize a tree node from a square */
-node_t* init_tree(square_t* square);
+qtnode_t* init_tree(square_t* square);
 
 /* insert a data point to the tree */
-void insert(node_t* tree, point_t* point);
+void insert(qtnode_t* tree, point_t* point);
 
 /* point searching in the tree */
-void search_pt(node_t* tree, point_t* point);
+void search_pt(qtnode_t* tree, point_t* point);
 
 /* range search all valid points in tree */
-void search_range(node_t* tree, square_t* rectangle);
+void search_range(qtnode_t* tree, square_t* rectangle);
 
 /* determine which quadrant the point belongs to */
 enum quadrant determine_quad(square_t* square, point_t* point);
@@ -71,7 +71,7 @@ int in_sq(square_t* square, point_t* point);
 int point_cmp(point_t* p1, point_t* p2);
 
 /* print the entire tree using level-order traversal */
-void print_tree(node_t* tree);
+void print_tree(qtnode_t* tree);
 
 /* free the entire tree structure recursively */
-void free_tree(node_t* tree);
+void free_tree(qtnode_t* tree);

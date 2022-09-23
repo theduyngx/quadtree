@@ -1,10 +1,18 @@
 # ninja log v5
-2	146	6853915036556638	CMakeFiles/qtree_self_implementation.dir/qtree.c.obj	dfa5c1b536b8f420
 552	983	6853965368690270	qtree_self_implementation.exe	5d28c5f7c5199e07
-5	550	6853965364440205	CMakeFiles/qtree_self_implementation.dir/main.c.obj	5b53a86f6b687737
-6	225	6853912399405942	CMakeFiles/qtree_self_implementation.dir/queue.c.obj	9cc7268a39330728
-12	552	6853965364470268	CMakeFiles/qtree_self_implementation.dir/read.c.obj	afa1483671c1487
-0	151	6854757513786675	CMakeFiles/quadtree-in-c.dir/main.c.obj	648d75955adca6f
 5	170	6854757513984116	CMakeFiles/quadtree-in-c.dir/read.c.obj	9cd297bf30c844db
+0	151	6854757513786675	CMakeFiles/quadtree-in-c.dir/main.c.obj	648d75955adca6f
 10	171	6854757513964088	CMakeFiles/quadtree-in-c.dir/qtree.c.obj	2e06c96c83f36cbb
 171	311	6854757515349283	quadtree-in-c.exe	368d5e0eac360588
+12	122	6856066271515017	CMakeFiles/quadtree-in-c.dir/debug.c.obj	c7c5b7f0bd224c1d
+1	123	6856066271513665	CMakeFiles/quadtree-in-c.dir/main.c.obj	f5c4dc25426a7332
+9	124	6856066271527151	CMakeFiles/quadtree-in-c.dir/read.c.obj	6a117b5e1362613c
+5	125	6856066271527151	CMakeFiles/quadtree-in-c.dir/qtree.c.obj	a882ef50633f8bd5
+125	286	6856066273107177	quadtree-in-c.exe	316918cb9c0ae597
+2	80	6856068488283963	CMakeFiles/quadtree-in-c.dir/main.c.obj	f5c4dc25426a7332
+13	82	6856068488311156	CMakeFiles/quadtree-in-c.dir/debug.c.obj	c7c5b7f0bd224c1d
+7	96	6856068488449747	CMakeFiles/quadtree-in-c.dir/read.c.obj	6a117b5e1362613c
+10	100	6856068488491159	CMakeFiles/quadtree-in-c.dir/qtree.c.obj	a882ef50633f8bd5
+101	188	6856068489299816	quadtree-in-c.exe	316918cb9c0ae597
+1	63	6856070079967774	CMakeFiles/quadtree-in-c.dir/debug.c.obj	c7c5b7f0bd224c1d
+64	154	6856070080824044	quadtree-in-c.exe	316918cb9c0ae597

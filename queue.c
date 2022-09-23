@@ -10,7 +10,7 @@
 /*
  * initialize queue
  */
-queue_t* init_queue(node_t* treeNode) {
+queue_t* init_queue(qtnode_t* treeNode) {
     assert(treeNode);
     queue_t* q = (queue_t*) malloc(sizeof(queue_t));
     assert(q);
@@ -24,7 +24,7 @@ queue_t* init_queue(node_t* treeNode) {
 /*
  * initialize node
  */
-qnode_t* init_node(node_t* treeNode) {
+qnode_t* init_node(qtnode_t* treeNode) {
     assert(treeNode);
     qnode_t* qnode = (qnode_t*) malloc(sizeof(qnode_t));
     assert(qnode);
@@ -35,7 +35,7 @@ qnode_t* init_node(node_t* treeNode) {
 /*
  * insert to queue - enqueue
  */
-void enqueue(queue_t* q, node_t* treeNode) {
+void enqueue(queue_t* q, qtnode_t* treeNode) {
     assert(treeNode);
     assert(q);
     q->tail->next = init_node(treeNode);
@@ -46,9 +46,9 @@ void enqueue(queue_t* q, node_t* treeNode) {
 /*
  * remove from queue - dequeue
  */
-node_t* dequeue(queue_t* q) {
+qtnode_t* dequeue(queue_t* q) {
     assert(q->head && q->tail);
-    node_t* node = q->head->treeNode;
+    qtnode_t* node = q->head->treeNode;
     q->head = q->head->next;
     q->length = q->length-1;
     return node;

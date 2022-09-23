@@ -35,9 +35,9 @@ int verify_num(char* str);
 /* check which type of queries being instructed */
 int check_query(char* str);
 /* point search operation during query */
-void point_search_query(node_t* tree, char* str, long double* pos);
+void point_search_query(qtnode_t* tree, char* str, long double* pos);
 /* range search operation during query */
-void range_search_query(node_t* tree, char* str, long double* pos);
+void range_search_query(qtnode_t* tree, char* str, long double* pos);
 
 /* manual input's entry; called when program runs with no arguments in terminal */
 int manual_input() {
@@ -76,7 +76,7 @@ int manual_input() {
     long double xL = pos[0], xR = pos[2], yB = pos[1], yT = pos[3];
     point_t *bL = init_point(xL, yB);
     point_t *tR = init_point(xR, yT);
-    node_t* tree = init_tree(init_square(bL, tR));
+    qtnode_t* tree = init_tree(init_square(bL, tR));
 
     /* insertion */
     print_header("Insertion");
@@ -228,7 +228,7 @@ int check_query(char* str) {
  * will accept 2 number arguments at a time as x,y-coordinates of the
  * queried point
  */
-void point_search_query(node_t* tree, char* str, long double* pos) {
+void point_search_query(qtnode_t* tree, char* str, long double* pos) {
     // square coordinates
     long double xL = tree->square->bottom_left->x;
     long double xR = tree->square->top_right->x;
@@ -270,7 +270,7 @@ void point_search_query(node_t* tree, char* str, long double* pos) {
  * accepts 4 number arguments at a time as a pair of x-y coordinates
  * of the bottom left and top right points of the queried square
  */
-void range_search_query(node_t* tree, char* str, long double* pos) {
+void range_search_query(qtnode_t* tree, char* str, long double* pos) {
     // square coordinates
     long double xL = tree->square->bottom_left->x;
     long double xR = tree->square->top_right->x;

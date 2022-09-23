@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/thedu/OneDrive/Desktop/UniMelb/Studies/Other Subjects/COMP20003 - Algorithms and Data Structures/quadtree-in-c
+# Install script for directory: C:/Users/thedu/OneDrive/Desktop/UniMelb/Studies/Other Subjects/COMP20003 - Algorithms and Data Structures/quadtree
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/thedu/OneDrive/Desktop/UniMelb/Studies/Other Subjects/COMP20003 - Algorithms and Data Structures/quadtree-in-c/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/thedu/OneDrive/Desktop/UniMelb/Studies/Other Subjects/COMP20003 - Algorithms and Data Structures/quadtree/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

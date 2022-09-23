@@ -20,29 +20,29 @@
 int oneside_intersect_check(square_t* r1, square_t* r2);
 
 /* range search operation passing found to check whether found any points or not */
-void search_range_check(node_t* tree, square_t* rectangle, int* found);
+void search_range_check(qtnode_t* tree, square_t* rectangle, int* found);
 
 /* split the node into 4 branches - initializing 4 child nodes */
-void split(node_t* node);
+void split(qtnode_t* node);
 
 /* recursively check whether point to be inserted can be inserted to a quadrant
  * of the bounding square in question or not; if not then continue splitting
  */
-void split_insert(node_t* root, point_t* point);
+void split_insert(qtnode_t* root, point_t* point);
 
 /* insert the point into a specified quadrant of the node */
-node_t* insert_quadrant(node_t* node, point_t* point, enum quadrant q);
+qtnode_t* insert_quadrant(qtnode_t* node, point_t* point, enum quadrant q);
 
 /* get the midpoints of the square, where point at (xMid, yMid) is the center */
 void get_midpoints(square_t* square, long double* xMidPass, long double* yMidPass);
 
 /* helper function printing out node */
-void print_node(node_t* node, int level);
+void print_node(qtnode_t* node, int level);
 
 /* print in-order, along with the level; LEVEL_PRINT_LIM is specified to limit the
  * number of levels being printed
  */
-void print_level_order(node_t* tree, int level);
+void print_level_order(qtnode_t* tree, int level);
 
 
 /* initialize a point, based on x, y coordinates */
@@ -62,8 +62,8 @@ square_t* init_square(point_t* bottomL, point_t* topR) {
 }
 
 /* initialize a tree node from a square */
-node_t* init_tree(square_t* square) {
-    node_t* node = (node_t*) malloc (sizeof(node_t));
+qtnode_t* init_tree(square_t* square) {
+    qtnode_t* node = (qtnode_t*) malloc (sizeof(qtnode_t));
     assert(node);
     node->square = square;
     node->point = NULL;
@@ -75,7 +75,7 @@ node_t* init_tree(square_t* square) {
 }
 
 /* insert a data point to the tree */
-void insert(node_t* tree, point_t* point) {
+void insert(qtnode_t* tree, point_t* point) {
     // base case - root node
     if (tree->sw == NULL)
         split_insert(tree, point);
@@ -92,7 +92,7 @@ void insert(node_t* tree, point_t* point) {
 /* split the root node until the 2 points aren't in the same quadrant
  * to then insert
  */
-void split_insert(node_t* root, point_t* point) {
+void split_insert(qtnode_t* root, point_t* point) {
     // if root does not yet have a point, assign it with a point
     if (root->point == NULL) {
         root->point = point;
@@ -104,14 +104,14 @@ void split_insert(node_t* root, point_t* point) {
     split(root);
     enum quadrant qroot = determine_quad(root->square, root->point);
     enum quadrant qpoint = determine_quad(root->square, point);
-    node_t* child = insert_quadrant(root, root->point, qroot);
+    qtnode_t* child = insert_quadrant(root, root->point, qroot);
     // existing point in different quadrant or not
     if (qroot == qpoint) split_insert(child, point);
     else insert_quadrant(root, point, qpoint);
 }
 
 /* split the node, used when insertion reaches leaf node */
-void split(node_t* node) {
+void split(qtnode_t* node) {
     // make sure node is a leaf node
     assert(node->sw == NULL);
     // top left and bottom right positions of node's square
@@ -135,16 +135,16 @@ void split(node_t* node) {
 }
 
 /* insert to a node based on specified quadrant */
-node_t* insert_quadrant(node_t* node, point_t* point, enum quadrant q) {
+qtnode_t* insert_quadrant(qtnode_t* node, point_t* point, enum quadrant q) {
     assert(node->nw); assert(point);
-    node_t** child = (node_t**) malloc (sizeof(node_t*));
+    qtnode_t** child = (qtnode_t**) malloc (sizeof(qtnode_t*));
     *child = (q == nw) ? node->nw : (q == ne) ? node->ne : (q == sw) ? node->sw : node->se;
     (*child)->point = point;
     return *child;
 }
 
 /* point searching in the tree */
-void search_pt(node_t* tree, point_t* point) {
+void search_pt(qtnode_t* tree, point_t* point) {
     // base case - root node
     if (tree->nw == NULL) {
         if (tree->point != NULL && point_cmp(tree->point, point))
@@ -176,7 +176,7 @@ enum quadrant determine_quad(square_t* square, point_t* point) {
 }
 
 /* range search operation + check if any point is found within range */
-void search_range_check(node_t* tree, square_t* rectangle, int* found) {
+void search_range_check(qtnode_t* tree, square_t* rectangle, int* found) {
     // base case - root node
     if (tree->nw == NULL) {
         if (tree->point != NULL && in_sq(rectangle, tree->point)) {
@@ -197,7 +197,7 @@ void search_range_check(node_t* tree, square_t* rectangle, int* found) {
 }
 
 /* range search all valid points in tree */
-void search_range(node_t* tree, square_t* rectangle) {
+void search_range(qtnode_t* tree, square_t* rectangle) {
     int found = 0;
     search_range_check(tree, rectangle, &found);
     if (!found)
@@ -243,13 +243,13 @@ int point_cmp(point_t* p1, point_t* p2) {
 }
 
 /* print the entire tree using level-order traversal */
-void print_tree(node_t* tree) {
+void print_tree(qtnode_t* tree) {
     print_node(tree, 0);
     print_level_order(tree, 0);
 }
 
 // print a single node
-void print_node(node_t* node, int level) {
+void print_node(qtnode_t* node, int level) {
     long double xMid, yMid;
     get_midpoints(node->square, &xMid, &yMid);
     if (level <= LEVEL_PRINT_LIM) {
@@ -258,7 +258,7 @@ void print_node(node_t* node, int level) {
 }
 
 // print levels of a tree recursively
-void print_level_order(node_t* tree, int level) {
+void print_level_order(qtnode_t* tree, int level) {
     if (tree->nw == NULL) {
         if (tree->point != NULL) {
             print_node(tree, level);
@@ -275,7 +275,7 @@ void print_level_order(node_t* tree, int level) {
 }
 
 /* free the entire tree structure recursively */
-void free_tree(node_t* tree) {
+void free_tree(qtnode_t* tree) {
     if (tree == NULL) return;
     free_tree(tree->nw);
     free_tree(tree->ne);
