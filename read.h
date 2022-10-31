@@ -1,7 +1,7 @@
 /*
  * Header of manual read, which specifically reads manual inputs; the header
- * only includes a globally accessible function to read from user input as
- * intended, along with constants that are useful for the program.
+ * only has a globally accessible function that reads from user input as,
+ * along with constants that are useful for the program.
  */
 
 #define MIN_ARGS 4    // minimum number of arguments for a square initialization

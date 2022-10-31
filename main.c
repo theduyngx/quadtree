@@ -1,18 +1,15 @@
 /*
  * Main program with a variety of uses:
- * 1. running test cases as debug mode;
- * 2. manual inputs to manually construct the quad tree, as well as
+ * 1. manual inputs to manually construct the quad tree, as well as
  *    other operations, namely insertion and searches.
- * 3. pass arguments from terminal (stdin).
+ * 2. pass arguments from terminal (stdin).
  * The outer square covering all points will be referred to as o.s.
  */
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include "queue.h"
 #include "read.h"
-#include "debug.h"
 
 /* program's entry */
 int main(int argc, char** argv) {
@@ -20,13 +17,9 @@ int main(int argc, char** argv) {
     if (argc <= 1)
         return manual_input();
 
-    /* case 2: debug mode - running test cases */
-    else if (!strcmp(argv[1], "debug"))
-        return debug_mode();
-
-    /* case 3: terminal, or text file passed as argument */
+    /* case 2: terminal, or text file passed as argument */
     /// WIP
-    if (argc < MIN_ARGS) {
+    else if (argc < MIN_ARGS) {
         fprintf(stderr, "Insufficient arguments!\n");
         exit(EXIT_FAILURE);
     }

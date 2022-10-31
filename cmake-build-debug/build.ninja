@@ -67,12 +67,6 @@ build CMakeFiles/quadtree-in-c.dir/qtree.c.obj: C_COMPILER__quadtree-in-c_Debug 
   OBJECT_DIR = CMakeFiles\quadtree-in-c.dir
   OBJECT_FILE_DIR = CMakeFiles\quadtree-in-c.dir
 
-build CMakeFiles/quadtree-in-c.dir/debug.c.obj: C_COMPILER__quadtree-in-c_Debug C$:/Users/thedu/OneDrive/Desktop/UniMelb/Studies/Other$ Subjects/COMP20003$ -$ Algorithms$ and$ Data$ Structures/quadtree/debug.c || cmake_object_order_depends_target_quadtree-in-c
-  DEP_FILE = CMakeFiles\quadtree-in-c.dir\debug.c.obj.d
-  FLAGS = -g -std=gnu99
-  OBJECT_DIR = CMakeFiles\quadtree-in-c.dir
-  OBJECT_FILE_DIR = CMakeFiles\quadtree-in-c.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target quadtree-in-c
@@ -81,7 +75,7 @@ build CMakeFiles/quadtree-in-c.dir/debug.c.obj: C_COMPILER__quadtree-in-c_Debug 
 #############################################
 # Link the executable quadtree-in-c.exe
 
-build quadtree-in-c.exe: C_EXECUTABLE_LINKER__quadtree-in-c_Debug CMakeFiles/quadtree-in-c.dir/main.c.obj CMakeFiles/quadtree-in-c.dir/read.c.obj CMakeFiles/quadtree-in-c.dir/qtree.c.obj CMakeFiles/quadtree-in-c.dir/debug.c.obj
+build quadtree-in-c.exe: C_EXECUTABLE_LINKER__quadtree-in-c_Debug CMakeFiles/quadtree-in-c.dir/main.c.obj CMakeFiles/quadtree-in-c.dir/read.c.obj CMakeFiles/quadtree-in-c.dir/qtree.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\quadtree-in-c.dir

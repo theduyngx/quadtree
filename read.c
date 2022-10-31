@@ -10,7 +10,7 @@
 #include <string.h>
 #include <ctype.h>
 #include "math.h"
-#include "queue.h"
+#include "qtree.h"
 #include "read.h"
 
 /* switch-cases for manual queries */

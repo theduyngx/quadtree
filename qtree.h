@@ -1,4 +1,5 @@
 /*
+ * Header file for qtree, including:
  * Structures, archetypes and basic operations' prototypes of a quadtree.
  * To replace the data quadtree carries with, change it to a comprehensive
  * footpath that also contains a point structure.

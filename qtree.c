@@ -2,17 +2,15 @@
  * A simple quadtree program that can be implemented to hold any kind of data,
  * not just points, as long as the footpath data itself contains the data
  * structure point.
- * The structure follows the "first come first serves" principle, where the
- * point to be inserted first is one of higher priority; meaning any point
- * inserted afterwards must be evaluated on the points inserted prior.
+ * The structure follows the "first come, first served" principle, where the
+ * point inserted first is one of higher priority; meaning any point inserted
+ * afterwards must be evaluated on the points inserted prior.
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
 #include "queue.h"
-
-#define LEVEL_PRINT_LIM 10000   // printing limit (based on tree's level)
 
 /* checking intersection onesidedly, meaning full intersection should check
  * r1 relative to r2 and r2 relative to r1
@@ -99,7 +97,7 @@ void split_insert(qtnode_t* root, point_t* point) {
         return;
     }
     // the 2 points must not be the same (avoiding infinite recursion)
-    assert(!point_cmp(root->point, point));
+    if (point_cmp(root->point, point)) return;
     // split root into 4 branches, check which quadrant
     split(root);
     enum quadrant qroot = determine_quad(root->square, root->point);
@@ -244,7 +242,6 @@ int point_cmp(point_t* p1, point_t* p2) {
 
 /* print the entire tree using level-order traversal */
 void print_tree(qtnode_t* tree) {
-    print_node(tree, 0);
     print_level_order(tree, 0);
 }
 
@@ -252,9 +249,7 @@ void print_tree(qtnode_t* tree) {
 void print_node(qtnode_t* node, int level) {
     long double xMid, yMid;
     get_midpoints(node->square, &xMid, &yMid);
-    if (level <= LEVEL_PRINT_LIM) {
-        printf("Square's center (at level %d):\t(%.5Lf, %.5Lf)\n", level, xMid, yMid);
-    }
+    printf("Square's center (at level %d):\t(%.5Lf, %.5Lf)\n", level, xMid, yMid);
 }
 
 // print levels of a tree recursively
@@ -267,7 +262,6 @@ void print_level_order(qtnode_t* tree, int level) {
         }
         return;
     }
-    if (level == LEVEL_PRINT_LIM) printf("\t...\n   < many more >\n");
     print_level_order(tree->nw, level+1);
     print_level_order(tree->ne, level+1);
     print_level_order(tree->sw, level+1);
